@@ -1,4 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
 <script>
-  var path = window.location.pathname;
-  window.location.replace("/members/index.html#" + path);
+    var path = window.location.pathname;
+    if (path.indexOf('/members') === 0) {
+        var slug = path.replace('/members', '').replace(/^\/+|\/+$/g, '');
+        if (slug) {
+            window.location.replace('/members/#/' + slug);
+        } else {
+            window.location.replace('/members/#/dashboard');
+        }
+    }
 </script>
+</head>
+<body></body>
+</html>
